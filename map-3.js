@@ -1,3 +1,5 @@
+// inner workings of the map function
+
 Array.prototype.map2 = function(callback) {
     const newArray = []
     for (let i = 0; i < this.length; i++) {
