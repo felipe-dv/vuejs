@@ -50,10 +50,11 @@ console.log(new Dog().talk())
 
 
 // use spread with object
-const employee = { name: 'Maria', salary: 12348.99 }
+const employee = { name: 'Mary', salary: 12348.99 }
 const clone = { active: true, ...employee }
 console.log(clone)
 
 // use spread with array
-const groupA = ['John', 'Peter', 'Mary']
-const finalGroup = ['Maria']
+const groupA = ['John', 'Peter', 'Eugene']
+const finalGroup = ['Mary', ...groupA, 'Carl']
+console.log(finalGroup)
