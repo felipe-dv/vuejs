@@ -1,7 +1,7 @@
 <script src = 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
 
 <div id = 'app'>
-    <p>{{ title }}</p>
+    <p v-once>{{ title }}</p>
     <p>{{ salutation() }}</p>
     <a v-bind:href="link">Google</a>
 </div>
