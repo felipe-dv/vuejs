@@ -9,15 +9,20 @@
     <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
         data (dica: event.target.value) -->
     <div>
-        <input type="text" v-on:keydown = 'value = $event.target.value'>
+        <input type="text" v-on:keydown = "value = $event.target.value">
         <p>{{ value }}</p>
     </div>
     
     <!-- 3) Ajuste o exemplo 2 para disparar o evento "keydown" somente
         quando a tecla for ENTER -->
     <div>
-        <input type="text">
+        <input type="text" v-on:keydown.enter = "value = $event.target.value">
         <p>{{ value }}</p>
+
+        <!-- OR THEN -->
+        <input type="text" v-on:keydown.enter = "changeValue">
+        <p>{{ value }}</p>
+
     </div>
 </div>
 <script src="app.js"></script>

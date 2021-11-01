@@ -6,6 +6,10 @@ new Vue({
     methods: {
         showAlert() {
             window.alert('ALERT!!!')
+        },
+        changeValue() {
+            this.value = event.target.value
+
         }
     }
 })
