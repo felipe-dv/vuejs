@@ -5,7 +5,7 @@
     <button v-on:click="counter2++">Increase 2</button>
     <button v-on:click="decrease">Decrease</button>
     <p>Counter: {{ counter }} | {{ counter2 }}</p>
-    <p>Result: {{ result() }}</p>
+    <p>Result: {{ result }}</p>
 </div>
 
 <script>
@@ -15,6 +15,20 @@
             counter: 0,
             counter2: 0,
         },
+        computed: {
+            result() {
+                console.log('computed method result called')
+                return this.counter >= 5 ? 
+                    'Greater than or equal to 5' : 'Less than 5'
+        },
+        watch: {
+            counter(new_value, old_value) {
+                setTimeout(() => {
+                    this.counter = 0
+                }, 2000)
+            }
+        },
+
         methods: {
             increase() {
                 this.counter++
@@ -22,9 +36,7 @@
             decrease() {
                 this.counter--
             },
-            result() {
-                return this.counter >= 5 ? 
-                    'Greater than or equal to 5' : 'Less than 5'
+
             }
         }
     })

@@ -1,0 +1,55 @@
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    .boxes {
+    display: flex;
+    justify-content: space-around;
+    }   
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+   }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .rot {
+        transform: rotate(45deg);
+    }
+
+
+</style>
+
+
+
+<div id="app">
+    <div class="boxes">
+        <div class="demo" :style = "{'background-color':color}"></div>
+        <div class="demo"></div>
+        <div class="demo"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="cor">
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            color: 'red'
+        },
+        computed: {
+        }
+    })
+</script>
